@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 35-37</title>
+</head>
+<body>
+    <script>
+        // Task 1
+        var date = new Date();
+        document.write("<h1>Task 1</h1>")
+        document.write(date);
+
+        // Task 2
+        var fname = prompt("Your first name? ");
+        var lname = prompt("Your last name? ");
+        document.write("<h1>Task 2</h1>");
+        document.write("Task 2 <br>"+"Welcome "+fname+" "+lname+" Have a good day!");
+
+        // Task 3
+        var num1 = parseInt(prompt("Enter 1st number: "));
+        var num2 = parseInt(prompt("Enter 2nd number: "));
+        var add = num1 + num2;
+        document.write("<h1>Task 3</h1>");
+        document.write("Task 3 <br>"+num1+" + "+num2+" = "+add);
+
+        // Task 4
+        var number1 = parseInt(prompt("Enter first number: "));
+        var number2 = parseInt(prompt("Enter second number: "));
+        var operator = prompt("Which operation do you want to perform?");
+        var result  = "";
+        document.write("<h1>Task 4</h1>");
+        document.write("<strong>Calculator App</strong> <br>");
+        if(operator === "+"){
+            result = number1+number2;
+            document.write(number1+" + "+number2+" = "+result);
+        }
+        else if(operator === "-"){
+            result = number1-number2;
+            document.write(number1+" - "+number2+" = "+result);
+        }
+        else if(operator === "*"){
+            result = number1*number2;
+            document.write(number1+" * "+number2+" = "+result);
+        }
+        else if(operator === "/"){
+            result = number1/number2;
+            document.write(number1+" / "+number2+" = "+result);
+        }
+        else{
+            document.write("wrong input");
+        }
+
+        // Task 5
+        function square(arg){
+            var ans = arg*arg;
+            return ans
+        }
+        document.write("<h1>Task 5</h1>");
+        var num = 3;
+        document.write("Squar of "+num+" = "+square(num));
+
+        // Task 6
+        document.write("<h1>Task 6</h1>");
+        function factorial(n) {
+            if (n == 0) return 1;
+            return n * factorial(n - 1);
+        }
+        var factNum = 8;
+        document.write("Factorial of " + factNum + " is " + factorial(factNum));
+
+        // Task 7
+        var start = parseInt(prompt("Starting number? "));
+        var end = parseInt(prompt("Ending number? "));
+        document.write("<h1>Task 7</h1>");
+        document.write("Counting from "+start+" to "+end);
+        var i = 0;
+        var res = "";
+        for(i=start; i<=end; i++){
+            document.write("<br>"+i+"<br>");
+        }
+
+        // Task 8
+        function calculateHypotenuse(side1, side2){
+            let h = calculateSquare(side1, side2);
+            let ans = Math.sqrt(h);
+            return ans;
+        }
+        function calculateSquare(a1, b1){
+            a1 = a1*a1;
+            b1 = b1*b1;
+            return a1, b1;
+        }
+        var s1 = 8;
+        var s2 = 6;
+        document.write("<h1>Task 8</h1>");
+        document.write("Hypotenuse: "+calculateHypotenuse(s1, s2));
+
+        // Task 9
+        function rectangle(width, hieght){
+            var a = width*hieght;
+            return a;
+        }
+        var wid = 8;
+        var hig = 4
+        document.write("<h1>Task 9</h1>");
+        document.write("Area of rectangle: "+rectangle(6,3)+" (parameters in numbers) <br>");
+        document.write("Area of rectangle: "+rectangle(wid,hig)+" (parameters in variables)");
+
+        // Task 10 
+        document.write("<h1>Task 10</h1>");
+        function reverseString(str) {
+            var splitString = str.split("");
+            var reverseArray = splitString.reverse();
+            var joinArray = reverseArray.join(""); 
+            return joinArray;
+        }
+        var str = "radar";
+        var res = reverseString(str); 
+        if(str === res){
+            document.write("Word: "+str+"<br>");
+            document.write("Yes it is a palindrome");
+        }
+        else{
+            document.write("Word: "+str+"<br>");
+            document.write("No it is not a palindrome");
+        }
+
+        // Task 11
+        document.write("<h1>Task 11</h1>");
+        function uppercase(str){
+            var array1 = str.split(' ');
+            var newarray1 = [];
+    
+            for(var x = 0; x < array1.length; x++){
+                newarray1.push(array1[x].charAt(0).toUpperCase()+array1[x].slice(1));
+            }
+            return newarray1.join(' ');
+        }
+        strr = "the quick brown fox";
+        document.write("Before: "+strr+"<br>");
+        document.write("After: "+uppercase(strr));
+        
+        // Task 12
+        document.write("<h1>Task 12</h1>");
+        function find_longest_word(str){
+            var array2 = str.match(/\w[a-z]{0,}/gi);
+            var result = array2[0];
+            for(var x = 1 ; x < array2.length ; x++){
+                if(result.length < array2[x].length){
+                    result = array2[x];
+                } 
+            }
+            return result;
+        }
+        var longStr = "Web Development Tutorial";  
+        document.write("String: "+longStr+"<br>") 
+        document.write("longest word: "+find_longest_word(longStr));
+        
+        // Task 13
+        document.write("<h1>Task 13</h1>");
+        function char_count(str, letter) {
+            var letter_Count = 0;
+            for (var position = 0; position < str.length; position++){
+                if (str.charAt(position) == letter){
+                    letter_Count += 1;
+                }
+            }
+            return letter_Count;
+        }
+        var wordd = "Talha Sheikh"
+        var accurance = "h";
+        document.write("String: "+wordd+"<br>");
+        document.write("number of accurances of letter "+accurance+" = "+char_count(wordd, accurance));
+        
+        // Task 14
+        document.write("<h1>Task 14</h1>");
+        document.write("<h2>The geometrizer</h2>");
+        const pi = 3.14;
+        let radius = 10;
+        function calcCircumference(r){
+            var c = 2*pi*r;
+            return c;
+        }
+        function calcArea(r){
+            var ar = pi*(r*r);
+            return ar;
+        }
+        document.write("radius: "+radius+"<br>");
+        document.write("The circumference is "+parseInt(calcCircumference(radius))+"<br>");
+        document.write("The area is "+calcArea(radius));
+    </script>
+</body>
+</html>

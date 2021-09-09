@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMIT Assignment chapter 31-34</title>
+</head>
+<body>
+    <!-- Task 1 -->
+    <h1>Task 1</h1>
+    <h2 id="date"></h2>
+
+    <!-- Task 4 -->
+    <h1>Task 4</h1>
+    <h2 id="task4"></h2>
+
+    <!-- task 5 -->
+    <h1>Task 5</h1>
+    <h2 id="task5"></h2>
+
+    <script>
+        // Task 1 JS
+        var d = new Date();
+        document.getElementById('date').innerHTML = d;
+
+        // Task 2 JS
+        var months = ["January", "February", "March", "April", "May","June", "July", "August", "September", "October", "November", "December",];
+        var monthNum = d.getMonth();
+        var getMonth = months[monthNum];
+        document.write("<h1>Task 2</h1>");
+        document.write("Current Month: "+getMonth);
+        // Task 3 JS
+        var days = ["Sun","Mon", "Tue", "Wed", "Thu", "Fri", "Sat",];
+        var dayNum = d.getDay();
+        var getDay = days[dayNum];
+        document.write("<h1>Task 3</h1>");
+        document.write("Today is: "+getDay);
+
+        // Task 4 JS
+        var today = d.getDay();
+        if(today == 0 || today == 6){
+            document.getElementById('task4').innerHTML = "Its Funday!"
+        }
+        else{
+            document.getElementById('task4').innerHTML = "Today is not sunday or saturday";
+        }
+
+        // Task 5 JS
+        var checkmonth = d.getDate();
+        if(checkmonth < 16){
+            document.getElementById('task5').innerHTML = "First fifteen days of the month";
+        }
+        else{
+            document.getElementById('task5').innerHTML = "Last days of the month";
+        }
+
+        // Task 6 JS
+        var Todaymil = d.getTime();
+        var todayMin = d.getMinutes();
+        var diff = Todaymil - todayMin;
+        var diffMin = diff/(1000*60*60);
+        var accurateMin = Math.floor(diffMin);
+
+        document.write("<h1>Task 6</h1>");
+        document.write("Current Date: " + d);
+        document.write("<br> Elapsed milliseconds since midnight, Jan 1, 1970: " + Todaymil);
+        document.write("<br> Elapsed minutes since midnight, Jan 1, 1970: " + accurateMin);
+
+        // Task 7
+        var hours = d.getHours();
+        document.write("<h1>Task 7</h1>")
+        if(hours < 12){
+            document.write("Its AM");
+        }
+        else{
+            document.write("Its PM");
+        }
+
+        // Task 8
+        document.write("<h1>Task 8</h1>")
+        document.write("Cant solve")
+
+        // Task 9
+        function days_passed(dt) {
+        var current = new Date(dt.getTime());
+        var previous = new Date(dt.getFullYear(), 0, 1);
+        return Math.ceil((current - previous + 1) / 86400000);
+        }
+        document.write("<h1>Task 9</h1>")
+        document.write(days_passed(new Date(2015, 6, 18))+" Days passed since first ramzan 2015");
+
+        // Task 10
+        var end = new Date(2015, 11, 05, 0, 0, 0, 0);
+        var beginning = new Date(2015, 0, 0, 0, 0, 0, 0);
+        var dif = end.getTime() - beginning.getTime();
+        var remaining = dif / 1000;
+        var final = Math.abs(remaining);
+        document.write("<h1>Task 10</h1>")
+        document.write("on reference "+ end+", "+final+" sconds have passed since begiining of 2015");
+
+        // Task 11
+        var today = new Date();
+        var current = new Date(today.getFullYear(), today.getMonth(), today.getDate(), today.getHours(), today.getMinutes(),);
+        var ago = new Date(today.getFullYear(), today.getMonth(), today.getDate(), today.getHours()-1, today.getMinutes(),);
+        document.write("<h1>Task 11</h1>");
+        document.write("Current date: "+current+"<br>");
+        document.write("1 hour ago, it was: "+ago);
+
+        // Task 12
+        var currentYear = new Date(today.getFullYear(), today.getMonth(), today.getDate(), today.getHours(), today.getMinutes(),);
+        var agoYear = new Date(today.getFullYear()-100, today.getMonth(), today.getDate(), today.getHours(), today.getMinutes(),);
+        document.write("<h1>Task 12</h1>");
+        document.write("Current date: "+currentYear+"<br>");
+        document.write("100 year back, it was: "+agoYear);
+
+        // Task 13
+        var age = parseInt(prompt("Enter age"));
+        var yearToday = d.getFullYear();
+        var birthYear = yearToday-age;
+        document.write("<h1>Task 13</h1>");
+        document.write("your age: "+age+"<br>");
+        document.write("Your birth year is "+birthYear);
+
+        // Task 14
+        var name = "Talha Sheikh";
+        var month = d.getMonth();
+        var unit = 410;
+        var charges = 16;
+        var lateFee = 350;
+        var netAmunt = unit*charges;
+        var grossAmount = netAmunt+lateFee;
+        document.write("<h1>Task 14</h1>");
+        document.write("Customer Name: "+"<strong>"+name+"</strong> <br>");
+        document.write("Month: "+"<strong>"+month+"</strong> <br>");
+        document.write("Number of units: "+"<strong>"+unit+"</strong> <br>");
+        document.write("Charges per unit: "+"<strong>"+charges+"</strong> <br>");
+        document.write("Net Amount payable (within due date): "+"<strong>"+netAmunt+"</strong> <br>");
+        document.write("Late fee surcharge: "+"<strong>"+lateFee+"</strong> <br>");
+        document.write("Gross Amount payable (after due date): "+"<strong>"+grossAmount+"</strong> <br>");
+    </script>
+</body>
+</html>
